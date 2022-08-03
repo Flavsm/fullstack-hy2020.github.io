@@ -278,12 +278,14 @@ const update = (id, newObject) => {
   return axios.put(`${baseUrl}/${id}`, newObject)
 }
 
-export default { 
-  getAll: getAll, 
-  create: create, 
-  update: update 
-}
-```
+const exportedRequests = {
+  getAll,
+  create,
+  update,
+};
+
+export default exportedRequests;
+
 
 The module returns an object that has three functions (<i>getAll</i>, <i>create</i>, and <i>update</i>) as its properties that deal with notes. The functions directly return the promises returned by the axios methods.
 
